@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "701720411640",
+    "project_id": "bifappp",
+    "storage_bucket": "bifappp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701720411640:android:c3af74c79de8eb18ad2a0d",
+        "android_client_info": {
+          "package_name": "com.example.bifappp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8b09HH_S3rDBLqe8HKLqc0BarS70Sd4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
