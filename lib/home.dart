@@ -10,7 +10,7 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
-  final Service _service = Service();
+  Service _service = Service();
 
   @override
   void initState() {
@@ -48,11 +48,40 @@ class _homeState extends State<home> {
                 itemCount: user.length,
                 itemBuilder: (context, index) {
                   final _userdata = user[index].data();
+
+                  String userid = user[index].id;
+
                   return ListTile(
                       title: Text(_userdata.name),
                       subtitle: Text(_userdata.phonenumber),
                       leading: CircleAvatar(
-                          backgroundImage: NetworkImage(_userdata.imageurl)));
+                          backgroundImage: NetworkImage(_userdata.imageurl)),
+                      trailing: IconButton(
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text("delete item "),
+                                    content:
+                                        Text("are you sure  want to delete"),
+                                    actions: [
+                                      TextButton(
+                                          onPressed: () {
+                                            _service.delete(userid);
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text('Yes')),
+                                      TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text('No'))
+                                    ],
+                                  );
+                                });
+                          },
+                          icon: Icon(Icons.delete)));
                 });
           }),
       floatingActionButton: FloatingActionButton(

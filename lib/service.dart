@@ -19,9 +19,12 @@ class Service {
   void addtofirestore(user user) async {
     try {
       await _firebase.add(user);
-      print('User added to Firestore successfully');
     } catch (e) {
       print('Error adding user to Firestore: $e');
     }
+  }
+
+  void delete(String userId) {
+    _firebase.doc(userId).delete();
   }
 }
